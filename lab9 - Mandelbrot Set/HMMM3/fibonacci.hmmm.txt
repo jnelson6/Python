@@ -1,0 +1,30 @@
+# fibonacci
+# Julia Nelson - March 21, 2018
+# takes a single input, n, and prints the first n fibonacci numbers
+# 'I pledge my honor that I have abided by the Stevens Honor System'
+# jnelson6
+
+0	read r1			# read n
+1	jeqz r1 20		# if n = 0, break loop
+2	setn r5 1		# sets r5 to 1
+3	setn r2 0		# sets r2 to 1, a = 0
+4	write r2		# prints the first term, 1
+5	sub r1 r1 r5		# n = n - 1 
+6	jeqz r1 20		# if r1 = 0 jump to line 20
+7	setn r3 1		# Sets r3 to 1, b = 1
+8	write r3		# prints the second term, 1 
+9	sub r1 r1 r5		# n = n - 1
+10	jeqz r1 20		# if n = 0 jump to line 20
+11	setn r4 0		# sets r4 to 0, c = 0
+12	add r4 r2 r3		# c = a + b
+13	write r4		# prints r4, c 
+14	setn r2 0 		# sets r2 to 0 for next term 
+15 	add r2 r2 r3		# a = b
+16 	setn r3 0 		# sets r3 to 0 for next term
+17	add r3 r3 r4		# b = c
+18	sub r1 r1 r5		# n = n - 1
+19	jgtzn r1 12		# if n is still greater than 0, loop to line 12
+20	halt			
+21	setn r4 0		# sets r4 to 0, c = 0
+22	write r4		# prints r4, c
+23	halt
